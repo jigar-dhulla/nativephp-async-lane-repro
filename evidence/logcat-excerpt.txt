@@ -1,0 +1,39 @@
+=== cold start 1 ===
+10-12 23:05:48.884 I PHP-Native: persistent_dispatch: GET / (body 0 bytes)
+10-12 23:05:48.923 I NativePHP: nativephp_call() called with method: AsyncTask.Dispatch
+10-12 23:05:48.924 I BridgeJNI: 🚀 BridgeJNI: NativePHPCall called with function='AsyncTask.Dispatch'
+10-12 23:05:48.924 W AsyncTask.Dispatch: no async executor running; task 4f5511f1-27ad-4ef0-bd77-75f8dfbb3370 dropped
+10-12 23:05:48.924 I BridgeJNI: ✅ BridgeJNI: NativePHPCall('AsyncTask.Dispatch') completed successfully
+10-12 23:05:51.385 D MainActivity: ▶️ Starting deferred background queue worker
+10-12 23:05:51.387 I PHPQueueWorker: Queue worker thread launched
+10-12 23:05:51.388 I PHPQueueWorker: Queue worker starting (dedicated context)
+10-12 23:05:51.393 I PHP-Native: worker_boot: initializing with bootstrap=/data/user/0/com.example.asyncrepro/app_storage/laravel/vendor/nativephp/mobile/bootstrap/android/persistent.php
+10-12 23:05:51.394 I AsyncTaskExecutor: Async executor started (4 threads)
+10-12 23:05:51.518 I PHP-Native: worker_boot: worker PHP interpreter ready
+10-12 23:05:51.518 I PHPQueueWorker: Worker runtime booted, processing jobs
+=== cold start 2 ===
+10-12 23:06:06.592 I PHP-Native: persistent_dispatch: GET / (body 0 bytes)
+10-12 23:06:06.635 I NativePHP: nativephp_call() called with method: AsyncTask.Dispatch
+10-12 23:06:06.636 I BridgeJNI: 🚀 BridgeJNI: NativePHPCall called with function='AsyncTask.Dispatch'
+10-12 23:06:06.636 W AsyncTask.Dispatch: no async executor running; task 1c004405-a703-46c2-a68e-96cadd5838a8 dropped
+10-12 23:06:06.636 I BridgeJNI: ✅ BridgeJNI: NativePHPCall('AsyncTask.Dispatch') completed successfully
+10-12 23:06:09.093 D MainActivity: ▶️ Starting deferred background queue worker
+10-12 23:06:09.096 I PHPQueueWorker: Queue worker thread launched
+10-12 23:06:09.097 I PHPQueueWorker: Queue worker starting (dedicated context)
+10-12 23:06:09.098 I PHP-Native: worker_boot: initializing with bootstrap=/data/user/0/com.example.asyncrepro/app_storage/laravel/vendor/nativephp/mobile/bootstrap/android/persistent.php
+10-12 23:06:09.099 I AsyncTaskExecutor: Async executor started (4 threads)
+10-12 23:06:09.225 I PHP-Native: worker_boot: worker PHP interpreter ready
+10-12 23:06:09.225 I PHPQueueWorker: Worker runtime booted, processing jobs
+=== cold start 3 ===
+10-12 23:06:24.825 I PHP-Native: persistent_dispatch: GET / (body 0 bytes)
+10-12 23:06:24.966 I NativePHP: nativephp_call() called with method: AsyncTask.Dispatch
+10-12 23:06:24.966 I BridgeJNI: 🚀 BridgeJNI: NativePHPCall called with function='AsyncTask.Dispatch'
+10-12 23:06:24.966 W AsyncTask.Dispatch: no async executor running; task 7d24e1cc-1387-4291-b4df-537207887ca0 dropped
+10-12 23:06:24.966 I BridgeJNI: ✅ BridgeJNI: NativePHPCall('AsyncTask.Dispatch') completed successfully
+10-12 23:06:27.325 D MainActivity: ▶️ Starting deferred background queue worker
+10-12 23:06:27.326 I PHPQueueWorker: Queue worker thread launched
+10-12 23:06:27.328 I AsyncTaskExecutor: Async executor started (4 threads)
+10-12 23:06:27.329 I PHPQueueWorker: Queue worker starting (dedicated context)
+10-12 23:06:27.329 I PHP-Native: worker_boot: initializing with bootstrap=/data/user/0/com.example.asyncrepro/app_storage/laravel/vendor/nativephp/mobile/bootstrap/android/persistent.php
+10-12 23:06:27.450 I PHP-Native: worker_boot: worker PHP interpreter ready
+10-12 23:06:27.451 I PHPQueueWorker: Worker runtime booted, processing jobs
