@@ -40,7 +40,7 @@ The screen is `app/NativeComponents/Repro.php` (dispatch in `mount()`) with `app
 
 ## Expected vs actual
 
-- Expected: a task dispatched during the first screen's `mount()` is queued until the background lane is ready (or there is a documented ready hook), then `finished()` fires with `ok`.
+- Expected: a task dispatched during the first screen's `mount()` is queued until the background lane is ready , then `finished()` fires with `ok`.
 - Actual: `failed()` fires within about 10 to 40 ms of mount with `AsyncTaskException: The async task could not be started — the background lane is not available.` Apps that treat a failed task as a network error show "offline".
 
 ## Result
@@ -71,8 +71,7 @@ I did not read or test anything beyond this on the Android side.
 ## Suggested fixes
 
 1. Queue tasks dispatched before the executor is running and run them once it starts (preferred, no app change needed).
-2. Or fire an event or hook when the background lane is ready, so apps can dispatch from it instead of from `mount()`.
-3. Or document that tasks dispatched from the first screen's `mount()` may be refused on Android, and how to retry (for example retry once on `failed()` after a short delay).
+2. Or start the executor before the first screen's `mount()` runs, so the lane is already up when the first task is dispatched.
 
 ## iOS
 
