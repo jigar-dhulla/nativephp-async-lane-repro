@@ -40,7 +40,7 @@ The screen is `app/NativeComponents/Repro.php` (dispatch in `mount()`) with `app
 
 ## Expected vs actual
 
-- Expected: a task dispatched during the first screen's `mount()` is queued until the background lane is ready , then `finished()` fires with `ok`.
+- Expected: a task dispatched during the first screen's `mount()` is queued until the background lane is ready, then `finished()` fires with `ok`.
 - Actual: `failed()` fires within about 10 to 40 ms of mount with `AsyncTaskException: The async task could not be started — the background lane is not available.` Apps that treat a failed task as a network error show "offline".
 
 ## Result
