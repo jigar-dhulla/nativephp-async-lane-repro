@@ -68,10 +68,15 @@ Gap between the refused dispatch and the executor start: about 2.5 s in all thre
 
 I did not read or test anything beyond this on the Android side.
 
-## Suggested fixes
+## Suggested fix
 
-1. Queue tasks dispatched before the executor is running and run them once it starts (preferred, no app change needed).
-2. Or start the executor before the first screen's `mount()` runs, so the lane is already up when the first task is dispatched.
+Queue tasks dispatched before the executor is running and run them once it starts. No app change is needed.
+
+### Verified
+
+I patched `vendor/nativephp/mobile` (and the copy in `nativephp/android`) locally: when `AsyncTask.Dispatch` arrives before any executor has started, the task id and its watchdog arguments go into a small bounded pending list (and the bridge answers success); `AsyncTaskExecutor.start()` hands that list to its normal `dispatch()` in order, with the deadline measured from the original dispatch. After a `stop()` dispatches are still refused as before. Changes are only in `AsyncTaskExecutor.kt` and `functions/AsyncFunctions.kt`.
+
+Result on the same emulator and versions as above: **3 of 3** cold starts showed `RESULT: ok` for the in-`mount()` dispatch (callback after 2.8 to 2.9 s, right after the executor started), the task ran exactly once per launch (one run logged per task id), `Dispatch again` still gave `RESULT: ok`, and there was no crash or late timeout. The diff is available on request.
 
 ## iOS
 
